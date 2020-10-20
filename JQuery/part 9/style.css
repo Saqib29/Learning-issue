@@ -1,0 +1,20 @@
+.saqib{
+  width: 500px;
+  background: red;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 20px;
+}
+.lorem{
+  width: 500px;
+  background: green;
+  padding: 10px;
+  margin: auto;
+  display: none;
+  overflow: hidden;
+}
+button{
+  font-size: 50px;
+}
