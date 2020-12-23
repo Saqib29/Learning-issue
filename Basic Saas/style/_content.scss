@@ -1,0 +1,9 @@
+.content{
+    @extend .sectionBox;
+    background-color: $textColor;
+
+    p{
+        background-color: $backgroundColor;
+        margin: 5px;
+    }
+}
