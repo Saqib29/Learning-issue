@@ -31,12 +31,14 @@ app.post('/login', (req, res) => {
     const user = { name : username }
 
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-     res.json({ accessToken: accessToken });
-});  
+     // res.json({ accessToken: accessToken });
+     res.send("token created");
+});
 
 function authenticateToken(req, res, next){
     const authHeader = req.headers['authorization']
     const token = authHeader && authHeader.split(' ')[1]
+    console.log(token);
     if(token == null) return res.sendStatus(401)
 
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
