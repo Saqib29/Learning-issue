@@ -11,17 +11,28 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
-          body: Container(
-            height: 200,
-            width: 300,
-            decoration: BoxDecoration(color: Colors.deepOrange),
-            child: Center(
-              child: Text("See what happens!", 
-                style: TextStyle(fontSize: 30),
-              ),
-              
-            ),
-          ),
+         appBar: AppBar(title: Text("Column"),),
+         body: Column(
+           children: <Widget>[
+             Container(
+               height: 200,
+               width: 150,
+               color: Colors.deepOrange,
+             ),
+             SizedBox(height: 10,),
+             Container(
+               height: 200,
+               width: 150,
+               color: Colors.orange,
+             ),
+             SizedBox(height: 10  ),
+             Container(
+               height: 200,
+               width: 150,
+               color: Colors.orange,
+             ),
+           ],
+         ),
         ),
       ),
       
