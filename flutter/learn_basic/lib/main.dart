@@ -7,15 +7,20 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp (
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text("This is my first app"),
-            RaisedButton(onPressed: () {})
+        appBar: AppBar(
+          title: Text("Home Page"),
+          centerTitle: true,
+          leading: Icon(Icons.message),
+          actions: <Widget>[
+            IconButton(icon: Icon(Icons.add_a_photo), onPressed: (){})
           ],
+        ),
+
+        body: Center(
+          child: Text("This is my first app", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
         ),
       ),
     );
