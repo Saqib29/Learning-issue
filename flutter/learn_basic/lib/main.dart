@@ -11,10 +11,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: Scaffold(
-          body: Text("I love coding", style: TextStyle(fontSize: 35),),
-          backgroundColor: Colors.deepOrange,
+          body: Container(
+            height: 200,
+            width: 300,
+            decoration: BoxDecoration(color: Colors.deepOrange),
+            child: Center(
+              child: Text("See what happens!", 
+                style: TextStyle(fontSize: 30),
+              ),
+              
+            ),
+          ),
         ),
       ),
+      
     );
   }
 }
