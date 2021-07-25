@@ -12,20 +12,20 @@ class MyApp extends StatelessWidget {
       home: SafeArea(
         child: Scaffold(
          appBar: AppBar(title: Text("Column"),),
-         body: Column(
+         body: Row(
            children: <Widget>[
              Container(
                height: 200,
                width: 150,
                color: Colors.deepOrange,
              ),
-             SizedBox(height: 10,),
+             SizedBox(width: 10,),
              Container(
                height: 200,
                width: 150,
                color: Colors.orange,
              ),
-             SizedBox(height: 10  ),
+             SizedBox(width: 10  ),
              Container(
                height: 200,
                width: 150,
