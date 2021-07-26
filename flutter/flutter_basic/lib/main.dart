@@ -8,39 +8,30 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SafeArea(
+      home: HomePage(),
+    );
+  }
+}
+
+
+class HomePage extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    var containerHieght = MediaQuery.of(context).size.height;
+    return  SafeArea(
         child: Scaffold(
-          appBar: AppBar(title: Text('Row'),),
-          body: ListView(
-           children: <Widget>[
-             Column(
-                children: <Widget>[
-              Container(
-                height: 200,
-                width: 150,
-                color: Colors.greenAccent,
-              ),
-              SizedBox(width: 10,),
-              Container(
-                height: 200,
-                width: 150,
-                color: Colors.greenAccent,
-              ),
-              SizedBox(width: 10,),
-              Container(
-                height: 200,
-                width: 150,
-                color: Colors.greenAccent,
-              ),
-            ],
-             ),
-           ],
-          )
+          body: Center(
+            child: Container(
+              height:  containerHieght/2,
+              width: containerHieght/4,
+              color: Colors.deepOrange,
+            ),
           ),
         ),
-      
-    );
+      );
   }
 }
