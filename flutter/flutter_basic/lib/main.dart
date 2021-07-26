@@ -24,21 +24,9 @@ class HomePage extends StatelessWidget {
     
     return  MaterialApp(
       home: Scaffold(
-        floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add)),
         body: Center(
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            overflow: Overflow.visible,
-            children: <Widget>[
-              Container(
-                height: 200,
-                width: 200,
-                color: Colors.amber
-              ),
-              Positioned(bottom: -50, child: CircleAvatar(radius: 50,))
-            ],
-          )
-        )
+          child: Image.network("https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"),
+        ),
       ),
     );
   }
