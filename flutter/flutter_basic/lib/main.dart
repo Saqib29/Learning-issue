@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:liquid_swipe/liquid_swipe.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,25 +10,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final pages = [
+      Container(color: Colors.green),
+      Container(color: Colors.red),
+      Container(color: Colors.blue),
+      Container(color: Colors.yellow),
+    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-
-class HomePage extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    
-    return  MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Image.network("https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"),
-        ),
+        body: LiquidSwipe(pages: pages),
       ),
     );
   }
 }
+
