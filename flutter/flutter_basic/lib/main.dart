@@ -24,28 +24,21 @@ class HomePage extends StatelessWidget {
     
     return  MaterialApp(
       home: Scaffold(
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              title: Text("Easy Explanation"),
-              subtitle: Text("Learn everything with wasy explanation"),
-              leading: CircleAvatar(child: Icon(Icons.message)),
-              trailing: Icon(Icons.add_a_photo),
-            ),
-            ListTile(
-              title: Text("Easy Explanation"),
-              subtitle: Text("Learn everything with wasy explanation"),
-              leading: CircleAvatar(child: Icon(Icons.message)),
-              trailing: Icon(Icons.add_a_photo),
-            ),
-            ListTile(
-              title: Text("Easy Explanation"),
-              subtitle: Text("Learn everything with wasy explanation"),
-              leading: CircleAvatar(child: Icon(Icons.message)),
-              trailing: Icon(Icons.add_a_photo),
-            ),
-          ],
-        ),
+        floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add)),
+        body: Center(
+          child: Stack(
+            alignment: Alignment.bottomCenter,
+            overflow: Overflow.visible,
+            children: <Widget>[
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.amber
+              ),
+              Positioned(bottom: -50, child: CircleAvatar(radius: 50,))
+            ],
+          )
+        )
       ),
     );
   }
