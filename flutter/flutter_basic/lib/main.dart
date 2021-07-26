@@ -13,36 +13,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: GridView.count(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          
+        body: Column(
           children: <Widget>[
-            Container(
-              height: 200,
-              width: 200,
-              color: Colors.green,
+            Expanded(
+              flex: 2,
+              child: Container(color: Colors.green)
             ),
-            Container(
-              height: 200,
-              width: 200,
-              color: Colors.amberAccent,
+            Expanded(
+              flex: 3,
+              child: Container(color: Colors.blue)
             ),
-            Container(
-              height: 200,
-              width: 200,
-              color: Colors.amber,
-            ),
-            Container(
-              height: 200,
-              width: 200,
-              color: Colors.black,
-            ),
+            Expanded(
+              flex: 2,
+              child: Container(color: Colors.yellow)
+            )
           ],
-        )
         ),
       ),
     );
