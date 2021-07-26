@@ -10,16 +10,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final pages = [
-      Container(color: Colors.green),
-      Container(color: Colors.red),
-      Container(color: Colors.blue),
-      Container(color: Colors.yellow),
-    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: LiquidSwipe(pages: pages),
+        body: Center(
+          child: Card(
+            elevation: 10,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20))
+            ),
+            child: Container(
+              height: 200,
+              width: 200,
+            ),
+          )
+        )
       ),
     );
   }
