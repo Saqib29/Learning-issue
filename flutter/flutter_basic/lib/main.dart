@@ -21,17 +21,32 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var containerHieght = MediaQuery.of(context).size.height;
-    return  SafeArea(
-        child: Scaffold(
-          body: Center(
-            child: Container(
-              height:  containerHieght/2,
-              width: containerHieght/4,
-              color: Colors.deepOrange,
+    
+    return  MaterialApp(
+      home: Scaffold(
+        body: ListView(
+          children: <Widget>[
+            ListTile(
+              title: Text("Easy Explanation"),
+              subtitle: Text("Learn everything with wasy explanation"),
+              leading: CircleAvatar(child: Icon(Icons.message)),
+              trailing: Icon(Icons.add_a_photo),
             ),
-          ),
+            ListTile(
+              title: Text("Easy Explanation"),
+              subtitle: Text("Learn everything with wasy explanation"),
+              leading: CircleAvatar(child: Icon(Icons.message)),
+              trailing: Icon(Icons.add_a_photo),
+            ),
+            ListTile(
+              title: Text("Easy Explanation"),
+              subtitle: Text("Learn everything with wasy explanation"),
+              leading: CircleAvatar(child: Icon(Icons.message)),
+              trailing: Icon(Icons.add_a_photo),
+            ),
+          ],
         ),
-      );
+      ),
+    );
   }
 }
