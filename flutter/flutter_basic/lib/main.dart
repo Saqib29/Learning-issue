@@ -1,43 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/page1.dart';
-import 'package:flutter_basic/page2.dart';
-import 'package:flutter_basic/page3.dart';
-import 'package:flutter_basic/page4.dart';
-import 'package:liquid_swipe/liquid_swipe.dart';
+import 'package:flutter_basic/second.dart';
+
 
 void main() =>  runApp(MyApp());
 
-
-class MyApp extends StatefulWidget {
-
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  PageController _controller = PageController(
-    initialPage: 3,
-  );
-
-  @override
-  void dispose(){
-    _controller.dispose();
-    super.dispose();
-  }
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: PageView(
-          scrollDirection: Axis.vertical,
-          controller: _controller,
-          children: <Widget>[
-            Page1(),
-            Page2(),
-            Page3(),
-            Page4(),
-          ],
+    return MaterialApp(home: HomePage());
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: CircleAvatar(
+          radius:50,
+          child: GestureDetector(
+            child: Hero(
+              tag: "add",
+              child: Icon(
+                Icons.add_a_photo,
+                size: 50,
+              )
+            ),
+            onTap: () {
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Second())
+              );
+            },
+          )
         )
       )
     );
