@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class One extends StatelessWidget {
-  @override  
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("one")
+        child: Text("One")
       )
     );
   }

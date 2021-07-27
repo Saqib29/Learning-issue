@@ -1,73 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/five.dart';
-import 'package:flutter_basic/four.dart';
 import 'package:flutter_basic/one.dart';
-import 'package:flutter_basic/three.dart';
 import 'package:flutter_basic/two.dart';
 
 
 void main() =>  runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  @override
+  @override   
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  @override  
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  var _currentindex = 0;
-  var pages = [
-    One(),
-    Two(),
-    Three(),
-    Four(),
-    Five(),
-  ];
-  @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentindex,
-        items: [
-        BottomNavigationBarItem(
-          backgroundColor: Colors.cyan,
-          icon: Icon((Icons.message)),
-          title: Text("Message"),
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.camera)),
+                Tab(icon: Icon(Icons.message)),
+              ],
+            )
+          ),
+          body: TabBarView(children: [
+            One(),
+            Two(),
+          ]),
         ),
-        BottomNavigationBarItem(
-          icon: Icon((Icons.call)),
-          title: Text("Call"),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon((Icons.pan_tool)),
-          title: Text("pan tool"),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon((Icons.radio)),
-          title: Text("Radio"),
-        ),
-        BottomNavigationBarItem(
-          icon: Icon((Icons.contact_page)),
-          title: Text("Contact"),
-        ),
-      ],
-      onTap: (index) {
-        setState(() {
-          _currentindex=index;
-        });
-      }
       ),
-      body: pages[_currentindex],
-      
     );
   }
 }
